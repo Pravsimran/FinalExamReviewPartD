@@ -1,5 +1,12 @@
-public interface PizzaFactoryInterface {
-    Pizza createPizza(String type);
+public class PizzaFactory implements PizzaFactoryInterface {
+    @Override
+    public Pizza createPizza(String type) {
+        Pizza pizza = null;
+        if (type.equals("cheese")) {
+            pizza = new CheesePizza();
+        } else if (type.equals("pepperoni")) {
+            pizza = new PepperoniPizza();
+        }
+        return pizza;
+    }
 }
-
-    
